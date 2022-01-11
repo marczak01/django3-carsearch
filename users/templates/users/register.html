@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+    <title>Auto</title>
+    <link rel="stylesheet" href="{% static 'styles/styleLogin.css' %}" />
+</head>
+
+<div class="cointainer">
+    <main>
+    <section class="main">
+        <div id="panel">
+            <form>
+                <h2>Rejestracja</h2>
+                <label for="username">Nazwa użytkownika:</label>
+                <input type="text" placeholder="Nick" id="username" name="username">
+                <label for="email"><b>Email:</b></label>
+                <input type="email" placeholder="Podaj swój email" name="email" id="email" required>
+                <label for="password">Hasło:</label>
+                <input type="password" placeholder="Hasło" id="password" name="password">
+                <label for="psw-repeat"><b>Powtórz hasło:</b></label>
+                <input type="password" placeholder="Powtórz hasło" name="psw-repeat" id="psw-repeat" required>
+                <hr>
+                <p>Akceptujesz moje
+                    <a class="t-p" href="#">OWU</a>
+                </p>
+                    <input type="submit" class="button" value="Zarejestruj się"/> <br>
+                    <p>Masz już konto? <a class="t-p" href="{% url 'login' %}">Zaloguj się</a></p>
+            </form>
+        </div>
+    </section>
+    </main>
+</div>
+{% endblock %}

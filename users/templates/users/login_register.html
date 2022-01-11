@@ -1,0 +1,40 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+    <title>Auto</title>
+    <link rel="stylesheet" href="{% static 'styles/styleLogin.css' %}" />
+</head>
+
+<div class="cointainer">
+    <main>
+    <section class="main">
+        <div id="panel">
+
+            {% if page == 'register' %}
+            <form method="POST" action="{% url 'register' %}" >
+                {% csrf_token %}
+                <h2>Registration</h2>
+                {{form.as_p}}
+                <input type="submit" class="button" value="Sign up"/>
+            </form>
+
+            {% else %}
+            <form action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
+                <h2>Logowanie</h2>
+                <label for="username">Username:</label>
+                <input type="text" placeholder="Username" id="username" name="username">
+                <label for="password">Password:</label>
+                <input type="password" placeholder="Enter password" id="password" name="password">
+                <div>
+                    <input type="submit" class="button" value="Login"/>
+                </div>
+            </form>
+            {% endif %}
+        </div>
+    </section>
+    </main>
+</div>
+{% endblock %}
