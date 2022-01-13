@@ -198,16 +198,18 @@
 <main>
 <div class="search">
     <h2>Liczba ogłoszeń: {{num}}</h2><!--- number of adverts -->
-    <span>Sort by:</span>
-    <select name="sort" required>
-        <option value="" disabled selected>Newest</option>
-        <option>Price lower</option>
-        <option>Price higher</option>
-        <option>Mileage lowest</option>
-        <option>Mileage highest</option>
-        <option>Najniższa moc silnika</option>
-        <option>Najwyższa moc silnika</option>
-    </select>
+    <form action="{% url 'adverts' %}">
+        <span>Sort by:</span>
+        <select name="sort">
+          <option value="new">newest</option>
+          <option value="old">older</option>
+          <option value="price_low">price low</option>
+          <option value="price_high">price high</option>
+          <option value="mileage_low">mileage lowest</option>
+          <option value="mileage_high">mileage higher</option>
+          <input type="submit" value="Sort">
+        </select>
+      </form>
 
 {% for advert in adverts %}
 <div class="mainAdvert">
@@ -219,9 +221,7 @@
         <div class="column1">
             <span class="titleAdvert"><b>{{advert.title}}</b></span>
                 <ul>
-                    <li class="header">
-                        {{advert.year_of_production}}
-                    </li>
+                    <li class="header">{{advert.year_of_production}}</li>
                     <li class="header">{{advert.mileage}}km</li>
                     <li class="header">{{advert.fuel_type}}</li>
                     <li class="header">{{advert.variant}}</li>

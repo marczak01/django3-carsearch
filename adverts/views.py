@@ -1,4 +1,5 @@
 
+from urllib import request
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from .models import Advert, Profile
@@ -6,12 +7,20 @@ from .forms import ProjectForm
 
 def adverts(request):
     page = 'adverts'
-    adverts = Advert.objects.all()
+
+
+    if request.GET.get('sort', 'new'):
+        adverts = Advert.objects.all().order_by('-created')
+    elif request.GET.get('sort','old'):
+        adverts = Advert.objects.all().order_by('created')
+    else:
+        adverts = Advert.objects.all().order_by('-mileage')
+
     a = 0
     for num in adverts:
         a += 1
 
-    context = {'adverts': adverts, 'num':a, 'page': page}
+    context = {'adverts': adverts, 'num': a, 'page': page}
 
     return render(request, 'adverts/adverts.html', context)
 
