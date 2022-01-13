@@ -5,14 +5,21 @@ from .models import Advert, Profile
 from .forms import ProjectForm
 
 def adverts(request):
+    page = 'adverts'
     adverts = Advert.objects.all()
-    context = {'adverts': adverts}
+    a = 0
+    for num in adverts:
+        a += 1
+
+    context = {'adverts': adverts, 'num':a, 'page': page}
+
     return render(request, 'adverts/adverts.html', context)
 
 def advert(request, pk):
+    page = 'advert'
     projectObj = Advert.objects.get(id=pk)
     profile = Profile.objects.all()
-    context = {'advert': projectObj, 'profile': profile}
+    context = {'advert': projectObj, 'profile': profile, 'page': page}
     return render(request, 'adverts/single-advert.html', context)
 
 

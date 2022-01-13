@@ -1,0 +1,227 @@
+body
+{
+    font-family: Arial;
+    background: linear-gradient(#FFF, #C4C4C4);
+    padding: 0;
+}
+
+h3
+{
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+header
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1E1E1E;
+    padding: 30px 60px 30px 60px;
+    color: white;
+}
+
+
+.cointainer
+{
+    box-shadow: 0 0 20px grey;
+    width: auto;
+    margin: 0 auto;
+    background-color: #C4C4C4;
+}
+
+header ul {
+    padding: 0;
+    list-style: none;
+}
+
+.menu
+{
+    float: left;
+}
+
+.menu-nav {
+    background-color: #54BAE8;
+    display: block;
+    width: auto;
+    height: auto;
+    border: 1px solid #000;;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    text-align: center;
+    padding: 10px 20px;
+    margin: 0px 10px 1px 0px;
+    border-radius: 26px;
+    transition: background-color 0.5s, color 0.5s;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.menu-nav:hover {
+    color: white;
+    background-color: tomato;
+    border: 1px solid #000;;
+}
+
+form
+{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #3b3b3b;
+    color:white;
+    padding: 20px;
+    align-items: center;
+}
+
+select, input
+{
+    border: none;
+    font: 300 100%/1.2 Ubuntu, sans-serif;
+    margin-right: 0.5em;
+    width: 176px;
+    height: 30px;
+}
+
+select:required:invalid 
+{
+    color: #666;
+}
+
+option[value=""][disabled]
+{
+    display: none;
+}
+
+option 
+{
+    color: #000;
+}
+
+label 
+{
+    display: block;
+}
+
+.search
+{
+    margin: 24px;
+}
+
+.mainAdvert {
+    border-radius: 4px;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(220, 221, 224);
+    padding: 16px;
+    margin: 24px;
+    margin-left: 19%;
+    width: 60%;
+}
+a
+{
+    text-decoration: none;
+    color: #000;
+}
+
+.advertImage {
+    width: 240px;
+    height: 180px;
+    visibility: visible;
+    object-fit: contain;
+}
+
+.row
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.column1
+{
+    margin-left: -15%;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+
+.price
+{
+    color: #c82814;
+    font-size: 26px;
+    margin-top: -1px;
+    margin-left: 60%;
+    padding-bottom: 20px;
+}
+
+.column 
+{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+
+.titleAdvert
+{
+    font-size: 25px;
+}
+
+.header
+{
+    float: left;
+    margin-right: 20px;
+    margin-left: -23px;
+    padding-right: 25px;
+}
+
+.location
+{
+    margin-top: 8%;
+}
+
+.address-icon
+{
+    width: 16px;
+    height: 16px;
+    background-color: cornflowerblue;
+    padding: 8px;
+    vertical-align: middle;
+    border-radius: 50%;
+    margin-right: 1%;
+}
+
+footer
+{
+    display: flex;
+    justify-content: space-around;
+    background-color: #1E1E1E;
+    color:white;
+    height: auto;
+	font-size: 16px;
+    padding: 20px 0 20px 0;
+}
+
+.social-container
+{
+    display:flex;
+    align-items: center;
+}
+
+.social-container span
+{
+    margin-left: 10px;
+}
+
+span
+{
+    line-height: 2;
+    letter-spacing: 1px;
+}
+
+.footer-link
+{
+    color: white;
+    text-decoration: none;
+}

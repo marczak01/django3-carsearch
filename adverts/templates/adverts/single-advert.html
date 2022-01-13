@@ -1,11 +1,7 @@
-{% include 'navbar.html' %}
+{% extends 'main.html' %}
 {% load static %}
 {% block content %}
 
-<head>
-  <title>Auto</title>
-  <link rel="stylesheet" href="{% static 'styles/styleAdvert.css' %}" />
-</head>
 
   <!-- Main Section -->
   <main>
@@ -47,10 +43,10 @@
             </div>
             <div class="caption">
                 <span class="time">{{advert.created}}</span>
-                <span class="advert-id"><b>ID:</b>{{advert.id}}</span>    
+                <span class="advert-id"><b>ID:</b>{{advert.id}}</span>
             </div>
             
-            <!--image slider end-->    
+            <!--image slider end-->
         </div>
         <div class='column'>
             <h1>{{advert.title}}</h1>
@@ -68,23 +64,23 @@
                   {{advert.variant}}
                 </li>
             </ul>
-            <h2 class="price">42 000 PLN</h1>
+            <h2 class="price">{{advert.price}}PLN</h1>
                 <section class="seller-card"> 
                         <h2 class="seller-heading">{{advert.owner.username}}</h2>
                         <span>{{advert.seller}}</span><!-- seller przeniesc do user/profile -->
                         <p>
                             <span>Sprzedający na AutoCar od {{advert.owner.created}}</span>
                         </p>
-                            <span>Kontakt ze sprzedającym:</span>
-                            <li><img class="address-icon circle" src="images/phone.png" alt="" /><b>Numer telefonu: </b><a href="tel:432 489 121">432 489 121</a></li>
-                            <li><img class="address-icon circle" src="images/mail.png" alt="" /><b>Email: </b> <a href="mailto:ktrybus15@gmail.com">{{advert.owner.email}}</a></li>
-                            <li><img class="address-icon circle" src="images/pin.png" alt="" /><b>Adres: </b>Rogowo, Poland</li> 
+                            <span>Contact with seller:</span>
+                            <li><img class="address-icon circle" src="images/phone.png" alt="" /><b>Phone number: </b><a href="tel:432 489 121">432 489 121</a></li>
+                            <li><img class="address-icon circle" src="images/mail.png" alt="" /><b>Email: </b> <a href="mailto:{{advert.owner.email}}">{{advert.owner.email}}</a></li>
+                            <li><img class="address-icon circle" src="images/pin.png" alt="" /><b>Address: </b>Rogowo, Poland</li> 
                 </section>
         </div>
     </div>
     <section>
         <hr>
-        <h1>Szczegóły</h1>
+        <h1>Detail</h1>
         <div class="row">
             <div class="column">
                 <ul>
@@ -158,4 +154,3 @@
     </section>
 
 {% endblock %}
-{% include 'footer.html' %}

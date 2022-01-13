@@ -1,220 +1,239 @@
 {% extends 'main.html' %}
+{% load static %}
 {% block content %}
 
-<table>
-    {% for advert in adverts %}
-    <tr>
-        <td><a href="{% url 'advert_form' advert.id %}">Edit</a></td>
-        <td><a href="{% url 'delete-advert' advert.id %}">Delete</a></td>
-        <td><a href="{% url 'single-advert' advert.id %}">View</a></td>
-    </tr>
-    {% endfor %}
-
-</table>
-
-<div class="cointainer">
-    <main>
-    <section class="main">
-        <form>
-            <h2>Czego szukasz?</h2>
-            <div class=""></div>
-            <label>Typ nadwozia:</label>
-            <select name="body_type" required>
-                <option value="" disabled selected>Typ nadwozia</option>
-                <option>Compact</option>
+<form>
+    <select name="body_type" required>
+        <option value="" disabled selected>Typ nadwozia</option>
+        <option>Compact</option>
+        <option>Convertible</option>
+        <option>Coupe</option>
+        <option>Pick-up</option>
+        <option>Station wagon</option>
+        <option>Sedans</option>
+        <option>Van</option>
+        <option>Transporter</option>
+        <option>Other</option>
+    </select>
+        <select name="logo_type" required>
+            <option value="" disabled selected>Marka pojazdu</option>
+            <option>Audi</option>
+            <option>BMW</option>
+            <option>Ford</option>
+            <option>Mercedes-Benz</option>
+            <option>Opel</option>
+            <option>Volkswagen</option>
+            <option>Renault</option>
+            <option>Alfa Romeo</option>
+            <option>Aston Martin</option>
+            <option>Bentley</option>
+            <option>Bugatti</option>
+            <option>Chevrolet</option>
+            <option>Chrysler</option>
+            <option>Citroen</option>
+            <option>Corvette</option>
+            <option>Cupra</option>
+            <option>Dacia</option>
+            <option>Daewoo</option>
+            <option>Dodge</option>
+            <option>Ferrari</option>
+            <option>Fiat</option>
+            <option>Honda</option>
+            <option>HUMMER</option>
+            <option>Hyundai</option>
+            <option>Infiniti</option>
+            <option>Isuzu</option>
+            <option>Jaguar</option>
+            <option>Jeep</option>
+            <option>Kia</option>
+            <option>Lamborghini</option>
+            <option>Lancia</option>
+            <option>Land Rover</option>
+            <option>Lexus</option>
+            <option>Lincoln</option>
+            <option>Mazda</option>
+            <option>McLaren</option>
+            <option>Mitsubishi</option>
+            <option>Nissan</option>
+            <option>Peugeot</option>
+            <option>Porsche</option>
+            <option>Seat</option>
+            <option>Skoda</option>
+            <option>Subaru</option>
+            <option>Suzuki</option>
+            <option>Tesla</option>
+            <option>Toyota</option>
+            <option>Volvo</option>
+        </select>
+            <input type="text" name="" placeholder="Wariant"/>
+            <select name="price_min" required>
+                <option value="" disabled selected>Cena od</option>
+                <option>2000 PLN</option>
+                <option>3000 PLN</option>
+                <option>5000 PLN</option>
+                <option>10 000 PLN</option>
+                <option>15 000 PLN</option>
+                <option>20 000 PLN</option>
+                <option>25 000 PLN</option>
+                <option>30 000 PLN</option>
+                <option>35 000 PLN</option>
+                <option>40 000 PLN</option>
+                <option>50 000 PLN</option>
+                <option>65 000 PLN</option>
+                <option>80 000 PLN</option>
+                <option>100 000 PLN</option>
+                <option>200 000 PLN</option>
+                <option>500 000 PLN</option>
+                <option>1 000 000 PLN</option>
+                <option>7 500 000 PLN</option>
             </select>
-            <label>Marka:</label>
-                <select name="logo_type" required>
-                    <option value="" disabled selected>Marka pojazdu</option>
-                    <option>Audi</option>
-                    <option>BMW</option>
-                    <option>Ford</option>
-                    <option>Mercedes-Benz</option>
-                    <option>Opel</option>
-                    <option>Volkswagen</option>
-                    <option>Renault</option>
-                    <option>Alfa Romeo</option>
-                    <option>Aston Martin</option>
-                    <option>Bentley</option>
-                    <option>Bugatti</option>
-                    <option>Chevrolet</option>
-                    <option>Chrysler</option>
-                    <option>Citroen</option>
-                    <option>Corvette</option>
-                    <option>Cupra</option>
-                    <option>Dacia</option>
-                    <option>Daewoo</option>
-                    <option>Dodge</option>
-                    <option>Ferrari</option>
-                    <option>Fiat</option>
-                    <option>Honda</option>
-                    <option>HUMMER</option>
-                    <option>Hyundai</option>
-                    <option>Infiniti</option>
-                    <option>Isuzu</option>
-                    <option>Jaguar</option>
-                    <option>Jeep</option>
-                    <option>Kia</option>
-                    <option>Lamborghini</option>
-                    <option>Lancia</option>
-                    <option>Land Rover</option>
-                    <option>Lexus</option>
-                    <option>Lincoln</option>
-                    <option>Mazda</option>
-                    <option>McLaren</option>
-                    <option>Mitsubishi</option>
-                    <option>Nissan</option>
-                    <option>Peugeot</option>
-                    <option>Porsche</option>
-                    <option>Seat</option>
-                    <option>Skoda</option>
-                    <option>Subaru</option>
-                    <option>Suzuki</option>
-                    <option>Tesla</option>
-                    <option>Toyota</option>
-                    <option>Volvo</option>
-                </select>
-                <label>Wariant:</label>
-                    <input type="text" name="" placeholder="Wariant"/>
-                <label>Cena:</label>
-                    <select name="price_min" required>
-                        <option value="" disabled selected>od</option>
-                        <option>2000 PLN</option>
-                        <option>3000 PLN</option>
-                        <option>5000 PLN</option>
-                        <option>10 000 PLN</option>
-                        <option>15 000 PLN</option>
-                        <option>20 000 PLN</option>
-                        <option>25 000 PLN</option>
-                        <option>30 000 PLN</option>
-                        <option>35 000 PLN</option>
-                        <option>40 000 PLN</option>
-                        <option>50 000 PLN</option>
-                        <option>65 000 PLN</option>
-                        <option>80 000 PLN</option>
-                        <option>100 000 PLN</option>
-                        <option>200 000 PLN</option>
-                        <option>500 000 PLN</option>
-                        <option>1 000 000 PLN</option>
-                        <option>7 500 000 PLN</option>
-                    </select>
-                    <select name="price_max" required>
-                        <option value="" disabled selected>do</option>
-                        <option>2000 PLN</option>
-                        <option>3000 PLN</option>
-                        <option>5000 PLN</option>
-                        <option>10 000 PLN</option>
-                        <option>15 000 PLN</option>
-                        <option>20 000 PLN</option>
-                        <option>25 000 PLN</option>
-                        <option>30 000 PLN</option>
-                        <option>35 000 PLN</option>
-                        <option>40 000 PLN</option>
-                        <option>50 000 PLN</option>
-                        <option>65 000 PLN</option>
-                        <option>80 000 PLN</option>
-                        <option>100 000 PLN</option>
-                        <option>200 000 PLN</option>
-                        <option>500 000 PLN</option>
-                        <option>1 000 000 PLN</option>
-                        <option>7 500 000 PLN</option>
-                    </select>
-                <label>Rok produkcji:</label>
-                    <select name="first_registration_min" required>
-                        <option value="" disabled selected>od</option>
-                        <option>2021</option>
-                        <option>2020</option>
-                        <option>2019</option>
-                        <option>2018</option>
-                        <option>2017</option>
-                        <option>2016</option>
-                        <option>2015</option>
-                        <option>2014</option>
-                        <option>2013</option>
-                        <option>2012</option>
-                        <option>2011</option>
-                        <option>2010</option>
-                        <option>2009</option>
-                        <option>2008</option>
-                        <option>2007</option>
-                        <option>2006</option>
-                        <option>2005</option>
-                        <option>2004</option>
-                        <option>2003</option>
-                        <option>2002</option>
-                        <option>2001</option>
-                        <option>2000</option>
-                        <option>1999</option>
-                        <option>1998</option>
-                    </select>
-                    <select name="first_registration_max" required>
-                        <option value="" disabled selected>do</option>
-                        <option>2021</option>
-                        <option>2020</option>
-                        <option>2019</option>
-                        <option>2018</option>
-                        <option>2017</option>
-                        <option>2016</option>
-                        <option>2015</option>
-                        <option>2014</option>
-                        <option>2013</option>
-                        <option>2012</option>
-                        <option>2011</option>
-                        <option>2010</option>
-                        <option>2009</option>
-                        <option>2008</option>
-                        <option>2007</option>
-                        <option>2006</option>
-                        <option>2005</option>
-                        <option>2004</option>
-                        <option>2003</option>
-                        <option>2002</option>
-                        <option>2001</option>
-                        <option>2000</option>
-                        <option>1999</option>
-                        <option>1998</option>
-                    </select>
-                <label>Rodzaj paliwa:</label>
-                    <select name="fuel_type" required>
-                        <option value="" disabled selected>Rodzaj paliwa</option>
-                        <option>Benzyna</option>
-                        <option>Benzyna+LPG</option>
-                        <option>Diesel</option>
-                        <option>Elektryczny</option>
-                        <option>Hybryda</option>
-                    </select>
-                <label>Przebieg:</label>
-                    <select name="distance" required>
-                        <option value="" disabled selected>od</option>
-                        <option>20 000 km</option>
-                        <option>35 000 km</option>
-                        <option>50 000 km</option>
-                        <option>75 000 km</option>
-                        <option>100 000 km</option>
-                        <option>125 000 km</option>
-                        <option>150 000 km</option>
-                        <option>200 000 km</option>
-                        <option>250 000 km</option>
-                    </select>
-                    <select name="price_max" required>
-                        <option value="" disabled selected>do</option>
-                        <option>20 000 km</option>
-                        <option>35 000 km</option>
-                        <option>50 000 km</option>
-                        <option>75 000 km</option>
-                        <option>100 000 km</option>
-                        <option>125 000 km</option>
-                        <option>150 000 km</option>
-                        <option>200 000 km</option>
-                        <option>250 000 km</option>
-                    </select>
-                    <div>
-                    <input type="submit" class="button" value="Zaawansowane"/>
-                    <input type="submit" class="button" name="search" value="Wyszukaj"/>
-                    </div>
-        </form>
-    </section>
-    </main>
-</div>
+            <select name="price_max" required>
+                <option value="" disabled selected>Cena do</option>
+                <option>2000 PLN</option>
+                <option>3000 PLN</option>
+                <option>5000 PLN</option>
+                <option>10 000 PLN</option>
+                <option>15 000 PLN</option>
+                <option>20 000 PLN</option>
+                <option>25 000 PLN</option>
+                <option>30 000 PLN</option>
+                <option>35 000 PLN</option>
+                <option>40 000 PLN</option>
+                <option>50 000 PLN</option>
+                <option>65 000 PLN</option>
+                <option>80 000 PLN</option>
+                <option>100 000 PLN</option>
+                <option>200 000 PLN</option>
+                <option>500 000 PLN</option>
+                <option>1 000 000 PLN</option>
+                <option>7 500 000 PLN</option>
+            </select>
+            <select name="first_registration_min" required>
+                <option value="" disabled selected>Rok produkcji od:</option>
+                <option>2021</option>
+                <option>2020</option>
+                <option>2019</option>
+                <option>2018</option>
+                <option>2017</option>
+                <option>2016</option>
+                <option>2015</option>
+                <option>2014</option>
+                <option>2013</option>
+                <option>2012</option>
+                <option>2011</option>
+                <option>2010</option>
+                <option>2009</option>
+                <option>2008</option>
+                <option>2007</option>
+                <option>2006</option>
+                <option>2005</option>
+                <option>2004</option>
+                <option>2003</option>
+                <option>2002</option>
+                <option>2001</option>
+                <option>2000</option>
+                <option>1999</option>
+                <option>1998</option>
+            </select>
+            <select name="first_registration_max" required>
+                <option value="" disabled selected>Rok produkcji do</option>
+                <option>2021</option>
+                <option>2020</option>
+                <option>2019</option>
+                <option>2018</option>
+                <option>2017</option>
+                <option>2016</option>
+                <option>2015</option>
+                <option>2014</option>
+                <option>2013</option>
+                <option>2012</option>
+                <option>2011</option>
+                <option>2010</option>
+                <option>2009</option>
+                <option>2008</option>
+                <option>2007</option>
+                <option>2006</option>
+                <option>2005</option>
+                <option>2004</option>
+                <option>2003</option>
+                <option>2002</option>
+                <option>2001</option>
+                <option>2000</option>
+                <option>1999</option>
+                <option>1998</option>
+            </select>
+            <select name="fuel_type" required>
+                <option value="" disabled selected>Rodzaj paliwa</option>
+                <option>Benzyna</option>
+                <option>Benzyna+LPG</option>
+                <option>Diesel</option>
+                <option>Elektryczny</option>
+                <option>Hybryda</option>
+            </select>
+            <select name="distance" required>
+                <option value="" disabled selected>Przebieg od</option>
+                <option>20 000 km</option>
+                <option>35 000 km</option>
+                <option>50 000 km</option>
+                <option>75 000 km</option>
+                <option>100 000 km</option>
+                <option>125 000 km</option>
+                <option>150 000 km</option>
+                <option>200 000 km</option>
+                <option>250 000 km</option>
+            </select>
+            <select name="price_max" required>
+                <option value="" disabled selected>Przebieg do</option>
+                <option>20 000 km</option>
+                <option>35 000 km</option>
+                <option>50 000 km</option>
+                <option>75 000 km</option>
+                <option>100 000 km</option>
+                <option>125 000 km</option>
+                <option>150 000 km</option>
+                <option>200 000 km</option>
+                <option>250 000 km</option>
+            </select>
+</form>
+<main>
+<div class="search">
+    <h2>Liczba ogłoszeń: {{num}}</h2><!--- number of adverts -->
+    <span>Sort by:</span>
+    <select name="sort" required>
+        <option value="" disabled selected>Newest</option>
+        <option>Price lower</option>
+        <option>Price higher</option>
+        <option>Mileage lowest</option>
+        <option>Mileage highest</option>
+        <option>Najniższa moc silnika</option>
+        <option>Najwyższa moc silnika</option>
+    </select>
 
+{% for advert in adverts %}
+<div class="mainAdvert">
+    <a href="{% url 'single-advert' advert.id %}">
+    <div class="row">
+        <div class="column">
+            <img src="{{ advert.featured_image.url }}" class="advertImage">
+        </div>
+        <div class="column1">
+            <span class="titleAdvert"><b>{{advert.title}}</b></span>
+                <ul>
+                    <li class="header">
+                        {{advert.year_of_production}}
+                    </li>
+                    <li class="header">{{advert.mileage}}km</li>
+                    <li class="header">{{advert.fuel_type}}</li>
+                    <li class="header">{{advert.variant}}</li>
+                </ul>
+                <span class="location"><img class="address-icon" src="images/pin.png" alt="" /><b>Adres: </b>Rogowo, Poland</span>
+        </div>
+        <div class="column">
+            <span><h2 class="price">{{advert.price}}PLN</h2></span>
+        </div>
+    </div>
+    </a>
+</div>
+{% endfor %}
+</main>
 {% endblock %}

@@ -1,7 +1,5 @@
 from django.db import models
 import uuid
-
-from django.db.models.fields import DateTimeCheckMixin, DateTimeField
 from users.models import Profile
 # Create your models here.
 
@@ -9,28 +7,19 @@ from users.models import Profile
 class Advert(models.Model):
 
     YES_OR_NO = [
-        ('Y','Yes'),
-        ('N','No'),
+        ('Yes','Yes'),
+        ('No','No'),
     ]
 
     MAN_AUTO = [
-        ('M','Manual'),
-        ('A','Automatic'),
+        ('Manual','Manual'),
+        ('Automatic','Automatic'),
     ]
 
     SELLER = [
-        ('A','All'),
-        ('D','Dealer'),
-        ('P','Private'),
-    ]
-
-    DOORS = [
-        ('1','1'),
-        ('2','2'),
-        ('3','3'),
-        ('4','4'),
-        ('5','5'),
-        ('6','6'),
+        ('All','All'),
+        ('Dealer','Dealer'),
+        ('Private','Private'),
     ]
 
     owner = models.ForeignKey(Profile, null=True, blank=True, on_delete=models.SET_NULL)
@@ -50,7 +39,7 @@ class Advert(models.Model):
     no_crashed = models.CharField(max_length=200, null=True, blank=False, choices=YES_OR_NO)
     manual_auto = models.CharField(max_length=200, null=True, blank=False, choices=MAN_AUTO)
     color = models.CharField(max_length=200, null=True, blank=False)
-    num_of_doors = models.IntegerField(null=True, blank=False, choices=DOORS)
+    num_of_doors = models.IntegerField(null=True, blank=False)
 
     created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True,

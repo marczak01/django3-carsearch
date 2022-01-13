@@ -8,7 +8,7 @@ from .forms import CustomUserCreationForm
 
 def registerUser(request):
     page = 'register'
-    form = CustomUserCreationForm
+    form = CustomUserCreationForm()
 
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
@@ -20,11 +20,10 @@ def registerUser(request):
             messages.success(request, "User account was created!")
 
             login(request, user)
-            return redirect('profile')
+            return redirect('adverts')
 
         else:
             messages.success(request, "An error has ocured furing registration")
-
 
     context = {'page': page, 'form': form}
     return render(request, 'users/login_register.html', context)
