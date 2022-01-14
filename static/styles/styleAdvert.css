@@ -1,0 +1,279 @@
+body
+{
+    font-family: Arial;
+    background: linear-gradient(#FFF, #C4C4C4);
+    padding: 0;
+}
+
+.price
+{
+    color: #c82814;
+    font-size: 26px;
+    margin-top: -1px;
+    padding-bottom: 20px;
+}
+h1
+{
+    margin-top: 10px;
+    font-size: 30px;
+}
+h2
+{
+    color: white;
+}
+h3
+{
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+header
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1E1E1E;
+    padding: 30px 60px 30px 60px;
+    color: white;
+}
+
+.cointainer
+{
+    box-shadow: 0 0 20px grey;
+    width: auto;
+    margin: 0 auto;
+    background-color: white;
+}
+
+header ul {
+    padding: 0;
+    list-style: none;
+}
+
+.menu
+{
+    float: left;
+}
+
+.menu-nav {
+    background-color: #54BAE8;
+    display: block;
+    width: auto;
+    height: auto;
+    border: 1px solid black;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    text-align: center;
+    padding: 10px 20px;
+    margin: 0px 10px 1px 0px;
+    border-radius: 26px;
+    transition: background-color 0.5s, color 0.5s;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.menu-nav:hover {
+    color: white;
+    background-color: tomato;
+    border: 1px solid black;
+}
+
+.main
+{
+    background-color: #C4C4C4;
+    padding: 10px 0px 20px 10px;
+}
+
+.row 
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.column 
+{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+
+.slider{
+    width: 900px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+  
+.slides{
+    width: 500%;
+    height: 500px;
+    display: flex;
+}
+  
+.slides input{
+    display: none;
+}
+  
+.slide{
+    width: 20%;
+    transition: 1s;
+}
+  
+.slide img{
+    width: 900px;
+    height: 500px;
+}
+  
+.navigation-manual{
+    position: absolute;
+    width: 900px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+  
+.manual-btn{
+    border: 1px solid black;
+    background-color: #54BAE8;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+    width: 10px;
+    height: 10px;
+}
+  
+.manual-btn:not(:last-child){
+    margin-right: 40px;
+}
+  
+.manual-btn:hover{
+    background-color: tomato;
+}
+  
+#radio1:checked ~ .first{
+    margin-left: 0;
+}
+  
+#radio2:checked ~ .first{
+    margin-left: -20%;
+}
+  
+#radio3:checked ~ .first{
+    margin-left: -40%;
+}
+  
+#radio4:checked ~ .first{
+    margin-left: -60%;
+}
+.header
+{
+    float: left;
+    margin-right: 20px;
+    margin-left: -23px;
+    padding-right: 25px;
+}
+
+.seller-card
+{
+    padding: 15px;
+    border-radius: 2px;
+    border: 1px solid #000000;
+    width: 50%;
+    margin-top: -20px;
+    list-style-type: none;
+}
+
+.seller-heading {
+    color: black;
+    font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+
+.address-icon
+{
+    width: 16px;
+    height: 16px;
+    background-color: cornflowerblue;
+    margin-right: 10px;
+    padding: 8px;
+    vertical-align: middle;
+}
+
+.circle
+{
+    border-radius: 50%;
+}
+
+.caption
+{
+    padding: 5px;
+}
+.advert-id
+{
+    margin-left: 10px;
+}
+
+hr
+{
+    border: 1px solid #777777;
+    margin-right: 10px;
+}
+
+.details
+{
+    list-style: none;
+}
+
+.offer-params__label
+{
+    color: #898989;
+    float: left;
+    width: 170px;
+}
+
+.description
+{
+    word-spacing: 5px; 
+    letter-spacing: 1px;
+    text-indent: 20px;
+    text-align: justify;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+footer
+{
+    display: flex;
+    justify-content: space-around;
+    background-color: #1E1E1E;
+    color:white;
+    height: auto;
+	font-size: 16px;
+    padding: 20px 0 20px 0;
+}
+
+.social-container
+{
+    display:flex;
+    align-items: center;
+}
+
+.social-container span
+{
+    margin-left: 10px;
+}
+
+span
+{
+    line-height: 2;
+    letter-spacing: 1px;
+}
+
+.footer-link
+{
+    color: white;
+    text-decoration: none;
+}

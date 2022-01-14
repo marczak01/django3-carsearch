@@ -1,0 +1,213 @@
+body
+{
+    font-family: Arial;
+    background: linear-gradient(#FFF, #C4C4C4);
+    padding: 0;
+}
+
+h2
+{
+    color: white;
+}
+h3
+{
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+header
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1E1E1E;
+    padding: 30px 60px 30px 60px;
+    color: white;
+}
+
+.cointainer
+{
+    box-shadow: 0 0 20px grey;
+    width: auto;
+    margin: 0 auto;
+    background-color: white;
+}
+
+header ul {
+    padding: 0;
+    list-style: none;
+}
+
+.menu
+{
+    float: left;
+}
+
+.menu-nav {
+    background-color: #54BAE8;
+    display: block;
+    width: auto;
+    height: auto;
+    border: 1px solid black;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    text-align: center;
+    padding: 10px 20px;
+    margin: 0px 10px 1px 0px;
+    border-radius: 26px;
+    transition: background-color 0.5s, color 0.5s;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.menu-nav:hover {
+    color: white;
+    background-color: tomato;
+    border: 1px solid black;
+}
+
+form
+{
+    display: inline-block;
+    background-color: #1E1E1E;
+    font-size: 20px;
+    color:white;
+    line-height: 2.5;
+    padding: 10px;
+    word-spacing: 3px;
+    width: auto;
+    height: auto;
+}
+
+.main
+{
+    height: auto;
+    background-image: url("/static/images/opel.png");
+    background-size: cover;
+    background-position: center;
+    padding: 10px 60px 20px 10px;
+}
+
+select, input
+{
+    padding: 10px;
+    border: none;
+    font: 300 100%/1.2 Ubuntu, sans-serif;
+    width: 180px;
+}
+
+select:required:invalid 
+{
+    color: #666;
+}
+
+option[value=""][disabled]
+{
+    display: none;
+}
+
+option 
+{
+    color: #000;
+}
+
+label 
+{
+    display: block;
+}
+.button
+{
+    float: left;
+    margin-top: 30px;
+    margin-left: 50px;
+    background-color: #54BAE8;
+    color: white;
+    border-radius: 6px;
+    transition: background-color 0.5s, color 0.5s;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.button:hover 
+{
+    background-color: tomato;
+    border: 1px solid black;
+}
+
+footer
+{
+    display: flex;
+    justify-content: space-around;
+    background-color: #1E1E1E;
+    color:white;
+    height: auto;
+	font-size: 16px;
+    padding: 20px 0 20px 0;
+}
+
+.social-container
+{
+    display:flex;
+    align-items: center;
+}
+
+.social-container span
+{
+    margin-left: 10px;
+}
+
+span
+{
+    line-height: 2;
+    letter-spacing: 1px;
+}
+
+.footer-link
+{
+    color: white;
+    text-decoration: none;
+}
+
+/*=======================
+  Projects Page
+========================*/
+.projects > .hero-section {
+    background: var(--color-sub-lighter);
+    height: 30vh;
+  }
+  
+  .projects .hero-section__box {
+    margin-bottom: 2.5rem;
+  }
+  
+  .projects .hero-section__box > h2 {
+    color: var(--color-sub);
+  }
+  
+  .projects .hero-section__box > h2 > span {
+    font-weight: 700;
+    color: var(--color-sub);
+  }
+  
+  .projectsList {
+    margin-top: 8rem;
+  }
+  
+  /*========== Projects ==========*/
+  
+  .project__thumbnail {
+    height: 25rem;
+    object-fit: cover;
+    object-position: top center;
+  }
+  
+  .project__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-sub);
+  }
+  
+  .project__info {
+    margin: 1rem 0;
+    font-size: 1.4rem;
+    text-align: justify;
+  }

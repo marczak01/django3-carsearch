@@ -1,0 +1,20 @@
+{% load static %}
+
+<header>
+    <a href="{% url 'adverts' %}">
+    <img src="{% static 'images/logo2.png' %}" alt="" />
+    </a>
+    <section>
+        <nav>
+            <ul>
+                {% if request.user.is_authenticated %}
+                <li class="menu"><a class="menu-nav" href="{% url 'advert_form' %}">Add Advert</a></li>
+                <li class="menu"><a class="menu-nav" href="{% url 'logout' %}">Log out</a></li>
+                {% else %}
+                <li class="menu"><a class="menu-nav" href="{% url 'login' %}">Log in</a></li>
+                {% endif %}
+                <li class="menu"><a class="menu-nav" href="{% url 'register' %}">Register</a></li>
+            </ul>
+        </nav>
+    </section>
+</header>

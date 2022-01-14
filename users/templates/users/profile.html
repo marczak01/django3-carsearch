@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% for profile in profiles.all %}
+
+<h1>This is {{profile.name}} profile.</h1>
+<h1>This is his bio: <br> {{profile.bio}}</h1>
+
+{% endfor %}
+{% endblock %}

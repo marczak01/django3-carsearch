@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <title>Auto</title>
+    <link rel="stylesheet" href="{% static 'styles/styleLogin.css' %}" />
+</head>
+
+    <main>
+        <section class="main">
+                <form class="form" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h2>Dodaj ogłoszenie</h2>
+                    {% for field in form %}
+                    <label>{{field.label}}:</label>
+                    {{field}}
+                    {% endfor %}
+                    <input type="submit" class="button" value="Dodaj ogłoszenie"/> <br>
+                </form>
+        </section>
+
+        </main>
+{% endblock %}
+
