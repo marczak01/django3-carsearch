@@ -7,20 +7,27 @@ from .forms import ProjectForm
 
 def adverts(request):
     page = 'adverts'
+    adverts = Advert.objects.all()
+    sort_by = request.GET.get('sort')
 
-
-    if request.GET.get('sort', 'new'):
+    if sort_by == 'new':
         adverts = Advert.objects.all().order_by('-created')
-    elif request.GET.get('sort','old'):
+    elif sort_by == 'old':
         adverts = Advert.objects.all().order_by('created')
-    else:
+    elif sort_by == 'mileage-high':
         adverts = Advert.objects.all().order_by('-mileage')
+    elif sort_by == 'mileage-low':
+        adverts = Advert.objects.all().order_by('mileage')
+    elif sort_by == 'power-high':
+        adverts = Advert.objects.all().order_by('-power')
+    elif sort_by == 'power-low':
+        adverts = Advert.objects.all().order_by('power')
+    else:
+        adverts = Advert.objects.all().order_by('-created')
 
-    a = 0
-    for num in adverts:
-        a += 1
+    num = len(adverts)
 
-    context = {'adverts': adverts, 'num': a, 'page': page}
+    context = {'adverts': adverts, 'num': num, 'page': page}
 
     return render(request, 'adverts/adverts.html', context)
 
