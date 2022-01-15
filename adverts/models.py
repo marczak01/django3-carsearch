@@ -30,6 +30,7 @@ class Advert(models.Model):
     variant = models.CharField(max_length=200, null=True, blank=False)
     fuel_type = models.ForeignKey('Fuel', null=True, on_delete=models.DO_NOTHING)
     year_of_production = models.IntegerField(null=True, blank=False)
+    price = models.IntegerField(null=True, blank=False)
     engine_capacity = models.CharField(max_length=200, null=True, blank=False)
     power = models.CharField(max_length=200, null=True, blank=False)
     mileage = models.CharField(max_length=200, null=True, blank=False)
