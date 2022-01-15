@@ -70,16 +70,25 @@ form
     background-color: #3b3b3b;
     color:white;
     padding: 20px;
-    align-items: center;
+    align-items: left;
 }
 
-select, input
+select
 {
     border: none;
     font: 300 100%/1.2 Ubuntu, sans-serif;
     margin-right: 0.5em;
     width: 176px;
     height: 30px;
+}
+
+input
+{
+    border: none;
+    font: 300 100%/1.2 Ubuntu, sans-serif;
+    margin-right: 0.5em;
+    width: 100px;
+    height: 20px;
 }
 
 select:required:invalid 

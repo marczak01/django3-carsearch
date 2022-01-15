@@ -2,6 +2,8 @@
 {% load static %}
 {% block content %}
 
+
+
 <form>
     <select name="body_type" required>
         <option value="" disabled selected>Typ nadwozia</option>
@@ -203,10 +205,11 @@
         <select name="sort">
           <option value="new">newest</option>
           <option value="old">older</option>
-          <option value="price_low">price low</option>
-          <option value="price_high">price high</option>
-          <option value="mileage_low">mileage lowest</option>
-          <option value="mileage_high">mileage higher</option>
+          <option value="mileage-low">mileage lowest</option>
+          <option value="mileage-high">mileage higher</option>
+          <option value="power-low">power low</option>
+          <option value="power-high">power high</option>
+
           <input type="submit" value="Sort">
         </select>
       </form>
@@ -225,6 +228,7 @@
                     <li class="header">{{advert.mileage}}km</li>
                     <li class="header">{{advert.fuel_type}}</li>
                     <li class="header">{{advert.variant}}</li>
+                    <li class="header">{{advert.created}}</li>
                 </ul>
                 <span class="location"><img class="address-icon" src="images/pin.png" alt="" /><b>Adres: </b>Rogowo, Poland</span>
         </div>

@@ -20,6 +20,16 @@
     <title>CarSearch - Search your dream car!</title>
 </head>
 
+<script>
+
+  function myFun(checkbox) {
+    var checkboxes = document.getElementsByName('sort')
+    checkboxes.forEach((item) => {
+      if (item !== checkbox) item.checked = false
+    })
+  }
+</script>
+
 <body>
     {% include 'navbar.html' %}
 
