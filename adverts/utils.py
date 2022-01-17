@@ -10,10 +10,10 @@ def searchAdverts(request):
 
     brands = Brand.objects.filter(name__icontains=search_query)
 
-    adverts = Advert.objects.distinct().filter(
+    adverts2 = Advert.objects.distinct().filter(
         Q(title__icontains=search_query) |
         Q(description__icontains=search_query) |
         Q(brand__in=brands)
     )
 
-    return adverts, search_query
+    return adverts2, search_query
