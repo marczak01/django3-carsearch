@@ -2,66 +2,67 @@
 {% load static %}
 {% block content %}
 
-<main class="profile my-md">
-  <div class="container">
-    <div class="layout">
-      <div class="column column--1of3">
-        <div class="card text-center">
-          <div class="card__body dev">
-            <a href="{% url 'edit-account' %}"><i>EDIT</i></a>
-            <img class="avatar avatar--xl" src="{{profile.profile_image.url}}" />
-            <h2 class="dev__name">{{profile.name}}</h2>
-            <p class="dev__title">{{profile.short_intro}}</p>
-            <p class="dev__location">Based in {{profile.location}}</p>
-            <ul class="dev__social">
-              <li>
-                <a title="Github" href="#" target="_blank"><i class="im im-github"></i></a>
-              </li>
-            </ul>
-            <a href="#" class="btn btn--sub btn--lg">Send Message </a>
+<main>
+  <section class="main">
+      <h1>User profile</h1>
+      <hr>
+      <div class="main-profile">
+          <img class="profile-picture circle" src="{{profile.profile_image.url}}" />
+          <div class="edit-profile">
+              <a class="button-profile" href="{% url 'edit-account' %}">Edit profile</a>
           </div>
-        </div>
-      </div>
-      <div class="column column--2of3">
-        <div class="devInfo">
-          <h3 class="devInfo__title">About Me</h3>
-          <p class="devInfo__about">{{profile.bio}}</p>
-        </div>
-        <div class="devInfo">
 
-        <div class="devInfo">
-          <h3 class="devInfo__title">Adverts</h3><a href="{% url 'advert_form' %}"><p>Add Project</p></a>
-            {% for advert in adverts %}
-            <div class="mainAdvert">
-              <a href="{% url 'advert_form' advert.id %}">EDIT</a>
-              <a href="{% url 'delete-advert' advert.id %}">DELETE</a>
-              <a href="{% url 'single-advert' advert.id %}">
-                <div class="row">
-                  <div class="column">
-                    <img src="{{ advert.featured_image.url }}" class="advertImage">
-                  </div>
-                  <div class="column1">
-                    <span class="titleAdvert"><b>{{advert.title}}</b></span>
-                    <ul>
-                      <li class="header">{{advert.year_of_production}}</li>
-                      <li class="header">{{advert.mileage}}km</li>
-                      <li class="header">{{advert.fuel_type}}</li>
-                      <li class="header">{{advert.variant}}</li>
-                      <li class="header">{{advert.created}}</li>
-                    </ul>
-                    <span class="location"><img class="address-icon" src="images/pin.png" alt="" /><b>Adres: </b>Rogowo, Poland</span>
-                  </div>
-                  <div class="column">
-                    <span><h2 class="price">{{advert.price}}PLN</h2></span>
-                  </div>
-                </div>
-              </a>
-            </div>
-            {% endfor %}
-
-        </div>
+          <h1 class="nickname-profile">{{profile.name}}</h1>
+          <h1 class="seller-profile">Seller: {{profile.seller}}</h1>
+          <h3 class="location-profile">{{advert.owner.location_city}}</h3>
+          <h3 class="country-profile">{{advert.owner.location_country}}</h3>
       </div>
-    </div>
-  </div>
-</main>
+      <h1>About me</h1>
+      <hr>
+      <div class="description-profile">
+          <p>{{profile.bio}}</p> 
+      </div>
+      <h1>Advert</h1>
+      <hr>
+      <div class="description-profile">
+          <a class="button-profile" href="{% url 'advert_form' %}">Add advert</a>
+      </div>
+      {% for advert in adverts %}
+      <div class="edit-advert">
+          <a class="button-profile" href="{% url 'advert_form' advert.id %}">Edit advert</a>
+          <a class="button-profile" href="{% url 'delete-advert' advert.id %}">Delete advert</a>
+      </div>
+
+      <div class="mainAdvert">
+          <a href="{% url 'single-advert' advert.id %}">
+          <div class="row">
+              <div class="column">
+                  <img src="{{ advert.featured_image.url }}" class="advertImage">
+              </div>
+              <div class="column1">
+                  <span class="titleAdvert"><b>{{advert.title}}</b></span>
+                      <ul>
+                          <li class="header">
+                            {{advert.year_of_production}}
+                          </li>
+                          <li class="header">
+                            {{advert.mileage}}km
+                          </li>
+                          <li class="header">
+                            {{advert.fuel_type}}
+                          </li>
+                          <li class="header">
+                            {{advert.variant}}
+                          </li>
+                      </ul>
+                      <span class="location"><img class="address-icon" src="images/pin.png" alt="" /><b>Adres: </b>{{advert.location_city}}, {{advert.location_country}}</span>
+              </div>
+              <div class="column">
+                  <span><h2 class="price">{{advert.price}} PLN</h2></span>
+              </div>
+          </div>
+          </a>
+      </div>
+      {% endfor %}
+  </section>
 {% endblock %}

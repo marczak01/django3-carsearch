@@ -63,17 +63,17 @@
                         {{advert.variant}}
                     </li>
                 </ul>
-                <h2 class="price">{{advert.price}}PLN</h1>
+                <h2 class="price">{{advert.price}} PLN</h1>
                     <section class="seller-card">
                             <a href="{% url 'profile' advert.owner.id %}"><h2 class="seller-heading">{{advert.owner.username}}</h2></a>
-                            <span>{{advert.seller}}</span><!-- seller przeniesc do user/profile -->
+                            <span>{{advert.owner.seller}}</span><!-- seller przeniesc do user/profile -->
                             <p>
                                 <span>Seller on AutoCar from {{advert.owner.created}}</span>
                             </p>
                                 <span>Contact with seller:</span>
-                                <li><img class="address-icon circle" src="images/phone.png" alt="" /><b>Phone number: </b><a href="tel:432 489 121">432 489 121</a></li>
-                                <li><img class="address-icon circle" src="images/mail.png" alt="" /><b>Email: </b> <a href="mailto:{{advert.owner.email}}">{{advert.owner.email}}</a></li>
-                                <li><img class="address-icon circle" src="images/pin.png" alt="" /><b>Address: </b>{{advert.owner.location}}</li> 
+                                <li><img class="address-icon circle" src="{% static 'images/phone.png' %}" alt="" /><b>Phone number: </b><a href="tel:432 489 121">432 489 121</a></li>
+                                <li><img class="address-icon circle" src="{% static 'images/mail.png' %}" alt="" /><b>Email: </b> <a href="mailto:{{advert.owner.email}}">{{advert.owner.email}}</a></li>
+                                <li><img class="address-icon circle" src="{% static 'images/pin.png' %}" alt="" /><b>Address: </b>{{advert.owner.location_city}}, {{advert.owner.location_country}}</li> 
                     </section>
             </div>
         </div>
