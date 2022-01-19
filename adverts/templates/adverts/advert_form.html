@@ -10,15 +10,15 @@
         <section class="main">
                 <form class="form" method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
-                    <h2>Dodaj ogłoszenie</h2>
+                    <h2>Add Advert</h2>
                     {% for field in form %}
                     <label>{{field.label}}:</label>
                     {{field}}
                     {% endfor %}
-                    <input type="submit" class="button" value="Dodaj ogłoszenie"/> <br>
+                    <input type="submit" class="button" value="Add Advert"/> <br>
                 </form>
         </section>
 
-        </main>
+    </main>
 {% endblock %}
 

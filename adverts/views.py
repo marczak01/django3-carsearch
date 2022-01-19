@@ -22,14 +22,14 @@ def adverts(request):
             adverts = adverts.order_by('-created')
         elif sort_by == 'old':
             adverts = adverts.order_by('created')
-        elif sort_by == 'mileage-high':
-            adverts = adverts.order_by('-mileage')
-        elif sort_by == 'mileage-low':
+        elif sort_by == 'price_low':
+            adverts = adverts.order_by('price')
+        elif sort_by == 'price_high':
+            adverts = adverts.order_by('-price')
+        elif sort_by == 'mileage_low':
             adverts = adverts.order_by('mileage')
-        elif sort_by == 'power-high':
-            adverts = adverts.order_by('-power')
-        elif sort_by == 'power-low':
-            adverts = adverts.order_by('power')
+        elif sort_by == 'mileage_high':
+            adverts = adverts.order_by('-mileage')
         else:
             adverts = adverts.order_by('-created')
 

@@ -2,55 +2,54 @@
 {% load static %}
 {% block content %}
 
-<form action="{% url 'adverts' %}" method="get">
-    <div class="form_field">
-        <label for="formInput#search">Search Adverts</label>
-        <input style="width: 400px;" class="input input--text" id="formInput#search"
-               type="text" value="{{search_query}}" name="search_query" placeholder="Search by Adverts title, brand or description">
-    </div>
-</form>
-
 <main>
-<div class="search">
+
+    <form action="{% url 'adverts' %}" method="get">
+        <div class="form_field">
+            <label for="formInput#search">Search Adverts</label>
+            <input style="width: 400px;" class="input input--text" id="formInput#search"
+                type="text" value="{{search_query}}" name="search_query" placeholder="Search by Adverts title, brand or description">
+        </div>
+    </form>
+
     <h2>Number of adverts: {{num}}</h2>
     <form action="{% url 'adverts' %}" >
         <span>Sort by:</span>
         <select name="sort" >
           <option value="new">newest</option>
-          <option value="old">older</option>
-          <option value="price_low">price low</option>
-          <option value="price_high">price high</option>
+          <option value="old">oldest</option>
+          <option value="price_low">price lowest</option>
+          <option value="price_high">price highest</option>
           <option value="mileage_low">mileage lowest</option>
-          <option value="mileage_high">mileage higher</option>
+          <option value="mileage_high">mileage highest</option>
           <input type="submit" value="Sort">
         </select>
     </form>
 
-
-{% for advert in adverts %}
-<div class="mainAdvert">
-    <a href="{% url 'single-advert' advert.id %}">
-    <div class="row">
-        <div class="column">
-            <img src="{{ advert.featured_image.url }}" class="advertImage">
-        </div>
-        <div class="column1">
-            <span class="titleAdvert"><b>{{advert.title}}</b></span>
-                <ul>
-                    <li class="header">{{advert.year_of_production}}</li>
-                    <li class="header">{{advert.mileage}}km</li>
-                    <li class="header">{{advert.fuel_type}}</li>
-                    <li class="header">{{advert.variant}}</li>
-                    <li class="header">{{advert.created}}</li>
-                </ul>
-                <span class="location"><img class="address-icon" src="images/pin.png" alt="" /><b>Adres: </b>Rogowo, Poland</span>
-        </div>
-        <div class="column">
-            <span><h2 class="price">{{advert.price}}PLN</h2></span>
-        </div>
+    {% for advert in adverts %}
+    <div class="mainAdvert">
+        <a href="{% url 'single-advert' advert.id %}">
+            <div class="row">
+                <div class="column">
+                    <img src="{{ advert.featured_image.url }}" class="advertImage">
+                </div>
+                <div class="column1">
+                    <span class="titleAdvert"><b>{{advert.title}}</b></span>
+                    <ul>
+                        <li class="header">{{advert.year_of_production}}</li>
+                        <li class="header">{{advert.mileage}}km</li>
+                        <li class="header">{{advert.fuel_type}}</li>
+                        <li class="header">{{advert.variant}}</li>
+                        <li class="header">{{advert.created}}</li>
+                    </ul>
+                    <span class="location"><img class="address-icon" src="images/pin.png" alt="" /><b>Adres: </b>{{advert.location}}, </span>
+                </div>
+                <div class="column">
+                    <span><h2 class="price">{{advert.price}}PLN</h2></span>
+                </div>
+            </div>
+        </a>
     </div>
-    </a>
-</div>
-{% endfor %}
+    {% endfor %}
 </main>
 {% endblock %}

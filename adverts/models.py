@@ -28,6 +28,7 @@ class Advert(models.Model):
     featured_image = models.ImageField(null=True, blank=False)
     brand = models.ForeignKey('Brand', null=True, on_delete=models.DO_NOTHING)
     variant = models.CharField(max_length=200, null=True, blank=False)
+    location = models.CharField(max_length=7, null=True, blank=False)
     fuel_type = models.ForeignKey('Fuel', null=True, on_delete=models.DO_NOTHING)
     year_of_production = models.IntegerField(null=True, blank=False)
     price = models.IntegerField(null=True, blank=False)

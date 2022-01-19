@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth.models import User
 from users.models import Profile
+from adverts.models import Advert
 from .forms import CustomUserCreationForm, ProfileForm
 
 def registerUser(request):
@@ -65,7 +66,7 @@ def profile(request, pk):
     page = 'profile'
     profile = Profile.objects.get(id=pk)
     context = {'profile': profile, 'page': page}
-    return render(request, 'users/account.html', context)
+    return render(request, 'users/profile.html', context)
 
 
 
@@ -83,6 +84,7 @@ def userAccount(request):
 
 @login_required(login_url="login")
 def editAccount(request):
+    page = 'edit-profile'
     profile = request.user.profile
     form = ProfileForm(instance=profile)
 

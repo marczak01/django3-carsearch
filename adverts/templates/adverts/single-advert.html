@@ -3,81 +3,80 @@
 {% block content %}
 
 
-  <!-- Main Section -->
-  <main>
+<main>
     <section class="main">
     <!--image slider start-->
-    <div class="row">
-        <div class="column">
-            <div class="slider">
-                <div class="slides">
-                <!--radio buttons start-->
-                <input type="radio" name="radio-btn" id="radio1">
-                <input type="radio" name="radio-btn" id="radio2">
-                <input type="radio" name="radio-btn" id="radio3">
-                <input type="radio" name="radio-btn" id="radio4">
-                <!--radio buttons end-->
-                <!--slide images start-->
-                <div class="slide first">
-                    <img src="{{advert.featured_image.url}}" alt="">
+        <div class="row">
+            <div class="column">
+                <div class="slider">
+                    <div class="slides">
+                    <!--radio buttons start-->
+                    <input type="radio" name="radio-btn" id="radio1">
+                    <input type="radio" name="radio-btn" id="radio2">
+                    <input type="radio" name="radio-btn" id="radio3">
+                    <input type="radio" name="radio-btn" id="radio4">
+                    <!--radio buttons end-->
+                    <!--slide images start-->
+                    <div class="slide first">
+                        <img src="{{advert.featured_image.url}}" alt="">
+                    </div>
+                    <div class="slide">
+                        <img src="images/advert/2.jpg" alt="">
+                    </div>
+                    <div class="slide">
+                        <img src="images/advert/8.jpg" alt="">
+                    </div>
+                    <div class="slide">
+                        <img src="images/advert/19.jpg" alt="">
+                    </div>
+                    <!--slide images end-->
+                    </div>
+                    <!--manual navigation start-->
+                    <div class="navigation-manual">
+                    <label for="radio1" class="manual-btn"></label>
+                    <label for="radio2" class="manual-btn"></label>
+                    <label for="radio3" class="manual-btn"></label>
+                    <label for="radio4" class="manual-btn"></label>
+                    </div>
+                    <!--manual navigation end-->   
                 </div>
-                <div class="slide">
-                    <img src="images/advert/2.jpg" alt="">
+                <div class="caption">
+                    <span class="time">{{advert.created}}</span>
+                    <span class="advert-id"><b>ID:</b>{{advert.id}}</span>
                 </div>
-                <div class="slide">
-                    <img src="images/advert/8.jpg" alt="">
-                </div>
-                <div class="slide">
-                    <img src="images/advert/19.jpg" alt="">
-                </div>
-                <!--slide images end-->
-                </div>
-                <!--manual navigation start-->
-                <div class="navigation-manual">
-                <label for="radio1" class="manual-btn"></label>
-                <label for="radio2" class="manual-btn"></label>
-                <label for="radio3" class="manual-btn"></label>
-                <label for="radio4" class="manual-btn"></label>
-                </div>
-                <!--manual navigation end-->   
-            </div>
-            <div class="caption">
-                <span class="time">{{advert.created}}</span>
-                <span class="advert-id"><b>ID:</b>{{advert.id}}</span>
-            </div>
 
-            <!--image slider end-->
+                <!--image slider end-->
+            </div>
+            <div class='column'>
+                <h1>{{advert.title}}</h1>
+                <ul>
+                    <li class="header">
+                        {{advert.year_of_production}}
+                    </li>
+                    <li class="header">
+                        {{advert.mileage}} km
+                    </li>
+                    <li class="header">
+                        {{advert.fuel_type}}
+                    </li>
+                    <li class="header">
+                        {{advert.variant}}
+                    </li>
+                </ul>
+                <h2 class="price">{{advert.price}}PLN</h1>
+                    <section class="seller-card">
+                            <a href="{% url 'profile' advert.owner.id %}"><h2 class="seller-heading">{{advert.owner.username}}</h2></a>
+                            <span>{{advert.seller}}</span><!-- seller przeniesc do user/profile -->
+                            <p>
+                                <span>Seller on AutoCar from {{advert.owner.created}}</span>
+                            </p>
+                                <span>Contact with seller:</span>
+                                <li><img class="address-icon circle" src="images/phone.png" alt="" /><b>Phone number: </b><a href="tel:432 489 121">432 489 121</a></li>
+                                <li><img class="address-icon circle" src="images/mail.png" alt="" /><b>Email: </b> <a href="mailto:{{advert.owner.email}}">{{advert.owner.email}}</a></li>
+                                <li><img class="address-icon circle" src="images/pin.png" alt="" /><b>Address: </b>{{advert.owner.location}}</li> 
+                    </section>
+            </div>
         </div>
-        <div class='column'>
-            <h1>{{advert.title}}</h1>
-            <ul>
-                <li class="header">
-                  {{advert.year_of_production}}
-                </li>
-                <li class="header">
-                  {{advert.mileage}} km
-                </li>
-                <li class="header">
-                  {{advert.fuel_type}}
-                </li>
-                <li class="header">
-                  {{advert.variant}}
-                </li>
-            </ul>
-            <h2 class="price">{{advert.price}}PLN</h1>
-                <section class="seller-card">
-                        <a href="{% url 'profile' advert.owner.id %}"><h2 class="seller-heading">{{advert.owner.username}}</h2></a>
-                        <span>{{advert.seller}}</span><!-- seller przeniesc do user/profile -->
-                        <p>
-                            <span>Sprzedający na AutoCar od {{advert.owner.created}}</span>
-                        </p>
-                            <span>Contact with seller:</span>
-                            <li><img class="address-icon circle" src="images/phone.png" alt="" /><b>Phone number: </b><a href="tel:432 489 121">432 489 121</a></li>
-                            <li><img class="address-icon circle" src="images/mail.png" alt="" /><b>Email: </b> <a href="mailto:{{advert.owner.email}}">{{advert.owner.email}}</a></li>
-                            <li><img class="address-icon circle" src="images/pin.png" alt="" /><b>Address: </b>Rogowo, Poland</li> 
-                </section>
-        </div>
-    </div>
     <section>
         <hr>
         <h1>Detail</h1>
@@ -152,5 +151,5 @@
         <pre style="font-size: 20px;" class="description">{{advert.description}}</pre>
     </section>
     </section>
-
+</main>
 {% endblock %}
