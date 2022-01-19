@@ -41,21 +41,25 @@ def adverts(request):
 
 def advert(request, pk):
     page = 'advert'
-    projectObj = Advert.objects.get(id=pk)
+    advert = Advert.objects.get(id=pk)
     profile = Profile.objects.all()
-    context = {'advert': projectObj, 'profile': profile, 'page': page}
+    context = {'advert': advert, 'profile': profile, 'page': page}
     return render(request, 'adverts/single-advert.html', context)
 
 
 
 @login_required(login_url="login")
 def createAdvert(request):
+    profile = request.user.profile #aktualnie zalogowany uzytk
     form = ProjectForm()
 
     if request.method == "POST":
         form = ProjectForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            #set current user to owner while creating advert
+            advert = form.save(commit=False)
+            advert.owner = profile
+            advert.save()
             return redirect('adverts')
 
     context = {'form': form}
@@ -65,7 +69,8 @@ def createAdvert(request):
 
 @login_required(login_url="login")
 def updateAdvert(request, pk):
-    advert = Advert.objects.get(id=pk)
+    profile = request.user.profile
+    advert = profile.advert_set.get(id=pk)
     form = ProjectForm(instance=advert)
 
     if request.method == "POST":
@@ -81,7 +86,8 @@ def updateAdvert(request, pk):
 
 @login_required(login_url="login")
 def deleteAdvert(request, pk):
-    advert = Advert.objects.get(id=pk)
+    profile = request.user.profile
+    advert = profile.advert_set.get(id=pk)
     if request.method == 'POST':
         advert.delete()
         return redirect('adverts')

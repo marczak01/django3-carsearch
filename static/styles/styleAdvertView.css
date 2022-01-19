@@ -225,3 +225,16 @@ span
     color: white;
     text-decoration: none;
 }
+
+.devInfo {
+    margin-bottom: 3rem;
+  }
+
+  .devInfo__title,
+  .devInfo__subtitle {
+    font-size: 2.6rem;
+    color: var(--color-sub);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }

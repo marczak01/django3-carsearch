@@ -24,7 +24,7 @@ class Advert(models.Model):
 
     owner = models.ForeignKey(Profile, null=True, blank=True, on_delete=models.SET_NULL)
     title = models.CharField(max_length=200)
-    description = models.TextField(max_length=1000, null=True, blank=False)
+    description = models.TextField(max_length=3500, null=True, blank=False)
     featured_image = models.ImageField(null=True, blank=False)
     brand = models.ForeignKey('Brand', null=True, on_delete=models.DO_NOTHING)
     variant = models.CharField(max_length=200, null=True, blank=False)

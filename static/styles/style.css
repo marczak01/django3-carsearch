@@ -167,47 +167,150 @@ span
     text-decoration: none;
 }
 
+
 /*=======================
-  Projects Page
+  Profile
 ========================*/
-.projects > .hero-section {
-    background: var(--color-sub-lighter);
-    height: 30vh;
+
+.profile .card > .dev {
+    padding: 4rem;
   }
   
-  .projects .hero-section__box {
-    margin-bottom: 2.5rem;
+  .dev__avatar {
+    display: block;
+    margin: auto;
   }
   
-  .projects .hero-section__box > h2 {
+  .dev__name {
     color: var(--color-sub);
-  }
-  
-  .projects .hero-section__box > h2 > span {
+    font-size: 2.8rem;
     font-weight: 700;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .dev__title {
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+  
+  .dev__location {
+    margin-top: 1rem;
+  }
+  
+  .dev__social {
+    margin: 3rem 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  .devInfo {
+    margin-bottom: 3rem;
+  }
+  
+  .devInfo__title,
+  .devInfo__subtitle {
+    font-size: 2.6rem;
     color: var(--color-sub);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
   }
   
-  .projectsList {
-    margin-top: 8rem;
-  }
-  
-  /*========== Projects ==========*/
-  
-  .project__thumbnail {
-    height: 25rem;
-    object-fit: cover;
-    object-position: top center;
-  }
-  
-  .project__title {
+  .devInfo__subtitle {
     font-size: 2rem;
-    font-weight: 700;
-    color: var(--color-sub);
+    color: var(--color-sub-light);
   }
   
-  .project__info {
-    margin: 1rem 0;
-    font-size: 1.4rem;
+  .devInfo__about,
+  .devSkill__info {
+    font-size: 1.45rem;
+    line-height: 1.7;
     text-align: justify;
   }
+  
+  .devSkill {
+    margin-bottom: 3rem;
+  }
+  
+  .devSkill__title {
+    font-size: 1.65rem;
+    font-weight: 500;
+    color: var(--color-sub-light);
+  }
+  
+  @media screen and (min-width: 700px) {
+    .devSkill {
+      display: flex;
+      justify-content: space-between;
+      gap: 3rem;
+    }
+  
+    .devSkill__info {
+      flex-basis: 80%;
+    }
+  }
+
+  .mainAdvert {
+    border-radius: 4px;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(220, 221, 224);
+    padding: 16px;
+    margin: 24px;
+    margin-left: 19%;
+    width: 60%;
+}
+a
+{
+    text-decoration: none;
+    color: #000;
+}
+
+.advertImage {
+    width: 240px;
+    height: 180px;
+    visibility: visible;
+    object-fit: contain;
+}
+
+.row
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.column1
+{
+    margin-left: -15%;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+
+.price
+{
+    color: #c82814;
+    font-size: 26px;
+    margin-top: -1px;
+    margin-left: 60%;
+    padding-bottom: 20px;
+}
+
+.column 
+{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+
+.titleAdvert
+{
+    font-size: 25px;
+}

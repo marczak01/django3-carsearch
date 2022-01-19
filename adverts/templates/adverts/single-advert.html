@@ -45,14 +45,14 @@
                 <span class="time">{{advert.created}}</span>
                 <span class="advert-id"><b>ID:</b>{{advert.id}}</span>
             </div>
-            
+
             <!--image slider end-->
         </div>
         <div class='column'>
             <h1>{{advert.title}}</h1>
             <ul>
                 <li class="header">
-                    {{advert.year_of_production}}
+                  {{advert.year_of_production}}
                 </li>
                 <li class="header">
                   {{advert.mileage}} km
@@ -65,8 +65,8 @@
                 </li>
             </ul>
             <h2 class="price">{{advert.price}}PLN</h1>
-                <section class="seller-card"> 
-                        <h2 class="seller-heading">{{advert.owner.username}}</h2>
+                <section class="seller-card">
+                        <a href="{% url 'profile' advert.owner.id %}"><h2 class="seller-heading">{{advert.owner.username}}</h2></a>
                         <span>{{advert.seller}}</span><!-- seller przeniesc do user/profile -->
                         <p>
                             <span>Sprzedający na AutoCar od {{advert.owner.created}}</span>
@@ -149,7 +149,7 @@
     </section>
     <section>
         <h1>Opis</h1>
-        <p class="description">{{advert.description}}</p>
+        <pre style="font-size: 20px;" class="description">{{advert.description}}</pre>
     </section>
     </section>
 

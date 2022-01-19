@@ -9,12 +9,13 @@
                type="text" value="{{search_query}}" name="search_query" placeholder="Search by Adverts title, brand or description">
     </div>
 </form>
+
 <main>
 <div class="search">
     <h2>Number of adverts: {{num}}</h2>
-    <form action="{% url 'adverts' %}">
+    <form action="{% url 'adverts' %}" >
         <span>Sort by:</span>
-        <select name="sort">
+        <select name="sort" >
           <option value="new">newest</option>
           <option value="old">older</option>
           <option value="price_low">price low</option>
